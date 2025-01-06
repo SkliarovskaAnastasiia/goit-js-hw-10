@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
 import iziToast from 'izitoast';
 
-const inputEl = document.querySelector('#datetime-picker');
 const startBtnEl = document.querySelector('button[data-start]');
 startBtnEl.setAttribute('disabled', 'true');
 
@@ -30,7 +29,7 @@ const options = {
 
 flatpickr('#datetime-picker', options);
 
-function convertMs(ms) {
+const convertMs = ms => {
   // Number of milliseconds per unit of time
   const second = 1000;
   const minute = second * 60;
@@ -47,14 +46,9 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
-}
+};
 
-function addLeadingZero(value) {
-  if (String(value).length === 1) {
-    return String(value).padStart(2, '0');
-  }
-  return value;
-}
+const addLeadingZero = value => String(value).padStart(2, '0');
 
 const daysEl = document.querySelector('span[data-days]');
 const hoursEl = document.querySelector('span[data-hours]');
@@ -69,7 +63,7 @@ const updateTimeIhfo = ({ days, hours, minutes, seconds }) => {
 };
 
 const onBtnClick = () => {
-  inputEl.setAttribute('disabled', 'true');
+  document.querySelector('#datetime-picker').setAttribute('disabled', 'true');
   startBtnEl.setAttribute('disabled', 'true');
 
   const intervalId = setInterval(() => {
@@ -83,8 +77,8 @@ const onBtnClick = () => {
       return;
     }
 
-    const timeObj = convertMs(timeDifference);
-    updateTimeIhfo(timeObj);
+    const timeElements = convertMs(timeDifference);
+    updateTimeIhfo(timeElements);
   }, 1000);
 };
 
