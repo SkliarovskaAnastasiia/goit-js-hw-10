@@ -19,24 +19,38 @@
     <main>
       <div class="container">
         <form class="form js-form">
-          <label>
+          <label class="input-label">
             Delay (ms)
-            <input type="number" name="delay" required />
+            <input class="delay-input" type="number" name="delay" required />
           </label>
 
-          <fieldset>
+          <fieldset class="fieldset">
             <legend>State</legend>
-            <label>
-              <input type="radio" name="state" value="fulfilled" required />
+            <label class="state-label">
+              <input
+                class="state-input visually-hidden"
+                type="radio"
+                name="state"
+                value="fulfilled"
+                required
+              />
+              <span class="custom-state-input"></span>
               Fulfilled
             </label>
-            <label>
-              <input type="radio" name="state" value="rejected" required />
+            <label class="state-label">
+              <input
+                class="state-input visually-hidden"
+                type="radio"
+                name="state"
+                value="rejected"
+                required
+              />
+              <span class="custom-state-input"></span>
               Rejected
             </label>
           </fieldset>
 
-          <button type="submit">Create notification</button>
+          <button class="create-btn" type="submit">Create notification</button>
         </form>
       </div>
     </main>
