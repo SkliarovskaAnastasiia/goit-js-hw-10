@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page 3</title>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-C9zXQO6A.css">
+    <title>Snackbar</title>
+    <script type="module" crossorigin src="/goit-js-hw-10/2-snackbar.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/styles-C3SFjjOR.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-Dov3POoy.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/styles-DXC9sN9-.css">
   </head>
   <body>
     <div class="wrap">
@@ -29,7 +32,42 @@
 
     </div>
     <main>
-      <div class="container"></div>
+      <div class="container">
+        <form class="form js-form">
+          <label class="input-label">
+            Delay (ms)
+            <input class="delay-input" type="number" name="delay" required />
+          </label>
+
+          <fieldset class="fieldset">
+            <legend>State</legend>
+            <label class="state-label">
+              <input
+                class="state-input visually-hidden"
+                type="radio"
+                name="state"
+                value="fulfilled"
+                required
+              />
+              <span class="custom-state-input"></span>
+              Fulfilled
+            </label>
+            <label class="state-label">
+              <input
+                class="state-input visually-hidden"
+                type="radio"
+                name="state"
+                value="rejected"
+                required
+              />
+              <span class="custom-state-input"></span>
+              Rejected
+            </label>
+          </fieldset>
+
+          <button class="create-btn" type="submit">Create notification</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
