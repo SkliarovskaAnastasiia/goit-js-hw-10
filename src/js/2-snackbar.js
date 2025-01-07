@@ -17,7 +17,7 @@ const promise = {
 
   fulfilled: value =>
     iziToast.show({
-      iconUrl: '../img/svg/ok.svg',
+      iconUrl: '../public/svg/ok.svg',
       title: 'OK',
       message: ` Fulfilled promise in ${value}ms`,
       position: 'topRight',
@@ -27,7 +27,7 @@ const promise = {
 
   rejected: value =>
     iziToast.show({
-      iconUrl: '../img/svg/error.svg',
+      iconUrl: '../public/svg/error.svg',
       title: 'Error',
       message: ` Rejected promise in ${value}ms`,
       position: 'topRight',
