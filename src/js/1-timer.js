@@ -15,7 +15,7 @@ const options = {
     if (selectedDates[0] < Date.now()) {
       startBtnEl.setAttribute('disabled', 'true');
       iziToast.show({
-        iconUrl: '/svg/error.svg',
+        iconUrl: '/src/public/svg/ok.svg',
         title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
