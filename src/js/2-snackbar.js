@@ -1,4 +1,6 @@
 import iziToast from 'izitoast';
+import iconOk from '../img/svg/ok.svg';
+import iconError from '../img/svg/error.svg';
 
 const formEl = document.querySelector('.js-form');
 
@@ -17,7 +19,7 @@ const promise = {
 
   fulfilled: value =>
     iziToast.show({
-      iconUrl: '/src/public/svg/ok.svg',
+      iconUrl: iconOk,
       title: 'OK',
       message: ` Fulfilled promise in ${value}ms`,
       position: 'topRight',
@@ -27,7 +29,7 @@ const promise = {
 
   rejected: value =>
     iziToast.show({
-      iconUrl: '/src/public/svg/ok.svg',
+      iconUrl: iconError,
       title: 'Error',
       message: ` Rejected promise in ${value}ms`,
       position: 'topRight',

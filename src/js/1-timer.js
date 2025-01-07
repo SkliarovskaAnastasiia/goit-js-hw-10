@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import iziToast from 'izitoast';
+import iconError from '../img/svg/error.svg';
 
 const startBtnEl = document.querySelector('button[data-start]');
 startBtnEl.setAttribute('disabled', 'true');
@@ -15,7 +16,7 @@ const options = {
     if (selectedDates[0] < Date.now()) {
       startBtnEl.setAttribute('disabled', 'true');
       iziToast.show({
-        iconUrl: '/src/public/svg/ok.svg',
+        iconUrl: iconError,
         title: 'Error',
         message: 'Please choose a date in the future',
         position: 'topRight',
